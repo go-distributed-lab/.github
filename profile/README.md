@@ -14,36 +14,38 @@ Every concept is built as a production-style Go project with benchmarks, documen
 
 ### Level 1 — Go Concurrency & Foundations
 
-* [x] **[Worker Pool](https://github.com/go-distributed-lab/go-worker-pool)** — Concurrent job processing with retries, dead-letter queues, context cancellation, and graceful shutdown.
-* [x] **[Rate Limiter](https://github.com/go-distributed-lab/go-rate-limiter)** — Four rate limiting algorithms behind a common interface with HTTP middleware and zero-allocation hot paths.
-* [ ] Cache
-* [ ] Circuit Breaker
+- [x] **[Worker Pool](https://github.com/go-distributed-lab/go-worker-pool)** — Concurrent job processing with retries, dead-letter queues, context cancellation, and graceful shutdown.
+- [x] **[Rate Limiter](https://github.com/go-distributed-lab/go-rate-limiter)** — Token Bucket, Leaky Bucket, Fixed Window, and Sliding Window implementations behind a common interface with HTTP middleware.
+- [x] **[Cache](https://github.com/go-distributed-lab/go-cache)** — Generic in-memory cache implementing LRU, LFU, FIFO, TTL, and Sharded LRU with benchmarks and an optional HTTP API.
 
 ### Level 2 — Backend Infrastructure
 
-* [ ] Message Queue
-* [ ] Load Balancer
-* [ ] API Gateway
+- [ ] Message Queue
+- [ ] Load Balancer
+- [ ] API Gateway
+- [ ] Circuit Breaker
 
 ### Level 3 — Distributed Systems
 
-* [ ] Service Discovery
-* [ ] Distributed Lock
-* [ ] Consistent Hashing
-* [ ] Bloom Filter
+- [ ] Service Discovery
+- [ ] Distributed Lock
+- [ ] Consistent Hashing
+- [ ] Bloom Filter
+- [ ] Distributed Cache
 
 ### Level 4 — Consensus & Coordination
 
-* [ ] Raft
+- [ ] Raft
 
 ---
 
 ## Completed Projects
 
-| Project                                                                  | Concepts                                                                  | Status     |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------- | ---------- |
-| [go-worker-pool](https://github.com/go-distributed-lab/go-worker-pool)   | Goroutines, Channels, WaitGroups, Retry, DLQ, Graceful Shutdown           | ✅ Complete |
-| [go-rate-limiter](https://github.com/go-distributed-lab/go-rate-limiter) | Token Bucket, Leaky Bucket, Fixed Window, Sliding Window, HTTP Middleware | ✅ Complete |
+| Project | Concepts | Status |
+|---------|----------|--------|
+| [go-worker-pool](https://github.com/go-distributed-lab/go-worker-pool) | Goroutines, Channels, WaitGroups, Retry, Dead-Letter Queue, Graceful Shutdown | ✅ Complete |
+| [go-rate-limiter](https://github.com/go-distributed-lab/go-rate-limiter) | Token Bucket, Leaky Bucket, Fixed Window, Sliding Window, HTTP Middleware, Atomic Metrics | ✅ Complete |
+| [go-cache](https://github.com/go-distributed-lab/go-cache) | LRU, LFU, FIFO, TTL, Sharded Cache, Generics, Thread Safety, HTTP API | ✅ Complete |
 
 ---
 
@@ -51,30 +53,71 @@ Every concept is built as a production-style Go project with benchmarks, documen
 
 Every repository in this organization aims to include:
 
-* 🏗️ Architecture Diagrams
-* 🐳 Docker Support
-* 📊 Benchmarks & Performance Analysis
-* ✅ Unit & Integration Tests
-* 📚 Comprehensive Documentation
-* 🔄 CI/CD Pipeline
-* 🧪 Race Detection & Static Analysis
-* 🎥 Demo / Usage Examples
-* ⚖️ Design Decisions & Trade-offs
+- 🏗️ Architecture Diagrams
+- 🐳 Docker Support
+- 📊 Benchmarks & Performance Analysis
+- ✅ Unit & Integration Tests
+- 📚 Comprehensive Documentation
+- 🔄 CI/CD Pipeline
+- 🧪 Race Detection & Static Analysis
+- 🎥 Demo / Usage Examples
+- ⚖️ Design Decisions & Trade-offs
 
 ---
 
 ## Engineering Approach
 
-Each project follows the same learning and engineering process:
+Each project follows the same engineering process:
 
-1. Understand the problem and production use cases.
-2. Study the underlying algorithm or system design concept.
-3. Design the architecture and package boundaries.
-4. Implement the core system from scratch in Go.
-5. Test concurrency and correctness with Go's race detector.
-6. Benchmark throughput, latency, memory, and allocations.
-7. Analyze design trade-offs and performance characteristics.
-8. Document the architecture and implementation decisions.
+1. Understand the production problem and real-world use cases.
+2. Study the underlying algorithms and system design concepts.
+3. Design the architecture, APIs, and package boundaries.
+4. Implement the system from scratch using Go's standard library whenever possible.
+5. Validate correctness with comprehensive tests and the race detector.
+6. Benchmark throughput, latency, memory usage, and allocations.
+7. Analyze performance characteristics and design trade-offs.
+8. Document the implementation with architecture diagrams and usage examples.
+
+---
+
+## Current Progress
+
+```
+✅ Worker Pool
+        │
+        ▼
+✅ Rate Limiter
+        │
+        ▼
+✅ Cache
+        │
+        ▼
+⬜ Message Queue
+        │
+        ▼
+⬜ Load Balancer
+        │
+        ▼
+⬜ API Gateway
+        │
+        ▼
+⬜ Circuit Breaker
+        │
+        ▼
+⬜ Service Discovery
+        │
+        ▼
+⬜ Distributed Lock
+        │
+        ▼
+⬜ Consistent Hashing
+        │
+        ▼
+⬜ Distributed Cache
+        │
+        ▼
+⬜ Raft
+```
 
 ---
 
@@ -84,3 +127,4 @@ Build a collection of production-quality Go implementations of the core building
 
 The goal is not only to make each system work, but to understand **why it works, how it behaves under load, where it breaks, and the engineering trade-offs behind its design**.
 
+Over time, these independent libraries will be composed together to build larger distributed systems, demonstrating how production infrastructure is engineered from reusable components.
