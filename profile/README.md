@@ -6,7 +6,7 @@
 
 This organization documents my journey of learning distributed systems through implementation rather than theory.
 
-Every concept is built as a production-style Go project with benchmarks, documentation, Docker support, CI/CD, architecture diagrams, and documented engineering trade-offs.
+Every concept is built as a production-style Go project with benchmarks, comprehensive documentation, Docker support, CI/CD, architecture diagrams, and documented engineering trade-offs.
 
 ---
 
@@ -20,7 +20,7 @@ Every concept is built as a production-style Go project with benchmarks, documen
 
 ### Level 2 — Backend Infrastructure
 
-- [ ] Message Queue
+- [x] **[Message Queue](https://github.com/go-distributed-lab/go-message-queue)** — In-memory broker supporting topics, retries, acknowledgements, dead-letter queues, metrics, and HTTP APIs.
 - [ ] Load Balancer
 - [ ] API Gateway
 - [ ] Circuit Breaker
@@ -45,7 +45,8 @@ Every concept is built as a production-style Go project with benchmarks, documen
 |---------|----------|--------|
 | [go-worker-pool](https://github.com/go-distributed-lab/go-worker-pool) | Goroutines, Channels, WaitGroups, Retry, Dead-Letter Queue, Graceful Shutdown | ✅ Complete |
 | [go-rate-limiter](https://github.com/go-distributed-lab/go-rate-limiter) | Token Bucket, Leaky Bucket, Fixed Window, Sliding Window, HTTP Middleware, Atomic Metrics | ✅ Complete |
-| [go-cache](https://github.com/go-distributed-lab/go-cache) | LRU, LFU, FIFO, TTL, Sharded Cache, Generics, Thread Safety, HTTP API | ✅ Complete |
+| [go-cache](https://github.com/go-distributed-lab/go-cache) | LRU, LFU, FIFO, TTL, Sharded Cache, Go Generics, Thread Safety, HTTP API | ✅ Complete |
+| [go-message-queue](https://github.com/go-distributed-lab/go-message-queue) | Pub/Sub, Broker, Topics, Ack/Nack, Retry, Dead-Letter Queue, Backpressure, HTTP API | ✅ Complete |
 
 ---
 
@@ -73,16 +74,16 @@ Each project follows the same engineering process:
 2. Study the underlying algorithms and system design concepts.
 3. Design the architecture, APIs, and package boundaries.
 4. Implement the system from scratch using Go's standard library whenever possible.
-5. Validate correctness with comprehensive tests and the race detector.
+5. Validate correctness with comprehensive tests and Go's race detector.
 6. Benchmark throughput, latency, memory usage, and allocations.
-7. Analyze performance characteristics and design trade-offs.
+7. Analyze performance characteristics and engineering trade-offs.
 8. Document the implementation with architecture diagrams and usage examples.
 
 ---
 
 ## Current Progress
 
-```
+```text
 ✅ Worker Pool
         │
         ▼
@@ -92,7 +93,7 @@ Each project follows the same engineering process:
 ✅ Cache
         │
         ▼
-⬜ Message Queue
+✅ Message Queue
         │
         ▼
 ⬜ Load Balancer
@@ -121,10 +122,21 @@ Each project follows the same engineering process:
 
 ---
 
-## Goal
+## Principles
+
+Across every repository, I aim to:
+
+- Build from first principles using Go's standard library whenever practical.
+- Understand the algorithms before writing code.
+- Measure performance with benchmarks instead of assumptions.
+- Design reusable, interface-driven components.
+- Document implementation details, trade-offs, and architectural decisions.
+- Prioritize correctness, simplicity, and maintainability over unnecessary abstraction.
+
+---
+
+## Long-Term Goal
 
 Build a collection of production-quality Go implementations of the core building blocks behind modern backend and distributed systems.
 
-The goal is not only to make each system work, but to understand **why it works, how it behaves under load, where it breaks, and the engineering trade-offs behind its design**.
-
-Over time, these independent libraries will be composed together to build larger distributed systems, demonstrating how production infrastructure is engineered from reusable components.
+As the collection grows, these libraries will be composed together to build larger distributed systems, demonstrating how production infrastructure is engineered from reusable components while documenting the reasoning, trade-offs, and performance characteristics behind every design decision.
