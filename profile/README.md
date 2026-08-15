@@ -20,8 +20,8 @@ Every concept is built as a production-style Go project with benchmarks, compreh
 
 ### Level 2 — Backend Infrastructure
 
-- [x] **[Message Queue](https://github.com/go-distributed-lab/go-message-queue)** — In-memory broker supporting topics, retries, acknowledgements, dead-letter queues, metrics, and HTTP APIs.
-- [ ] Load Balancer
+- [x] **[Message Queue](https://github.com/go-distributed-lab/go-message-queue)** — In-memory broker supporting topics, retries, acknowledgements, dead-letter queues, metrics, backpressure, and HTTP APIs.
+- [x] **[Load Balancer](https://github.com/go-distributed-lab/go-load-balancer)** — Layer-7 HTTP reverse proxy supporting Round Robin, Weighted Round Robin, Least Connections, Random, IP Hash, health checks, runtime backend management, and graceful shutdown.
 - [ ] API Gateway
 - [ ] Circuit Breaker
 
@@ -46,7 +46,8 @@ Every concept is built as a production-style Go project with benchmarks, compreh
 | [go-worker-pool](https://github.com/go-distributed-lab/go-worker-pool) | Goroutines, Channels, WaitGroups, Retry, Dead-Letter Queue, Graceful Shutdown | ✅ Complete |
 | [go-rate-limiter](https://github.com/go-distributed-lab/go-rate-limiter) | Token Bucket, Leaky Bucket, Fixed Window, Sliding Window, HTTP Middleware, Atomic Metrics | ✅ Complete |
 | [go-cache](https://github.com/go-distributed-lab/go-cache) | LRU, LFU, FIFO, TTL, Sharded Cache, Go Generics, Thread Safety, HTTP API | ✅ Complete |
-| [go-message-queue](https://github.com/go-distributed-lab/go-message-queue) | Pub/Sub, Broker, Topics, Ack/Nack, Retry, Dead-Letter Queue, Backpressure, HTTP API | ✅ Complete |
+| [go-message-queue](https://github.com/go-distributed-lab/go-message-queue) | Pub/Sub, Broker, Topics, Acknowledgements, Retry, Dead-Letter Queue, Backpressure, HTTP API | ✅ Complete |
+| [go-load-balancer](https://github.com/go-distributed-lab/go-load-balancer) | Reverse Proxy, Round Robin, Weighted RR, Least Connections, Random, IP Hash, Health Checks, Runtime Backend Management | ✅ Complete |
 
 ---
 
@@ -96,7 +97,7 @@ Each project follows the same engineering process:
 ✅ Message Queue
         │
         ▼
-⬜ Load Balancer
+✅ Load Balancer
         │
         ▼
 ⬜ API Gateway
