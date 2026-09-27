@@ -22,7 +22,7 @@ Every concept is built as a production-style Go project with benchmarks, compreh
 
 - [x] **[Message Queue](https://github.com/go-distributed-lab/go-message-queue)** — In-memory broker supporting topics, retries, acknowledgements, dead-letter queues, metrics, backpressure, and HTTP APIs.
 - [x] **[Load Balancer](https://github.com/go-distributed-lab/go-load-balancer)** — Layer-7 HTTP reverse proxy supporting Round Robin, Weighted Round Robin, Least Connections, Random, IP Hash, health checks, runtime backend management, and graceful shutdown.
-- [ ] API Gateway
+- [x] **[API Gateway](https://github.com/go-distributed-lab/go-api-gateway)** — HTTP API gateway with path and method routing, authentication, rate limiting, request transformation, reverse proxying, circuit breaking, retries, metrics, and dynamic route management.
 - [ ] Circuit Breaker
 
 ### Level 3 — Distributed Systems
@@ -48,6 +48,7 @@ Every concept is built as a production-style Go project with benchmarks, compreh
 | [go-cache](https://github.com/go-distributed-lab/go-cache) | LRU, LFU, FIFO, TTL, Sharded Cache, Go Generics, Thread Safety, HTTP API | ✅ Complete |
 | [go-message-queue](https://github.com/go-distributed-lab/go-message-queue) | Pub/Sub, Broker, Topics, Acknowledgements, Retry, Dead-Letter Queue, Backpressure, HTTP API | ✅ Complete |
 | [go-load-balancer](https://github.com/go-distributed-lab/go-load-balancer) | Reverse Proxy, Round Robin, Weighted RR, Least Connections, Random, IP Hash, Health Checks, Runtime Backend Management | ✅ Complete |
+| [go-api-gateway](https://github.com/go-distributed-lab/go-api-gateway) | Routing, Middleware, Authentication, Rate Limiting, Reverse Proxy, Circuit Breaking, Retry, Metrics, Dynamic Routing | ✅ Complete |
 
 ---
 
@@ -100,7 +101,7 @@ Each project follows the same engineering process:
 ✅ Load Balancer
         │
         ▼
-⬜ API Gateway
+✅ API Gateway
         │
         ▼
 ⬜ Circuit Breaker
